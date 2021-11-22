@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web</title>
+</head>
+<body>
+<script>
+    fetch("http://time.cybersecurity.seu.edu/api/date")
+        .then(function (res) {
+            return res.json()
+        }).then(function (json) {
+        console.log("data without cors:" + JSON.stringify(json))
+    }).catch(function (error) {
+        console.error("error without cors: " + error)
+    })
+    fetch("http://time.cybersecurity.seu.edu/api/datecors")
+        .then(function (res) {
+            return res.json()
+        }).then(function (json) {
+        console.log("data with cors:" + JSON.stringify(json))
+    }).catch(function (error) {
+        console.error("error with cors: " + error)
+    })
+</script>
+</body>
+</html>
